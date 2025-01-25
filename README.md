@@ -4,7 +4,7 @@ Ce projet vise à provisionner et déployer une architecture Kubernetes scalable
 
 Les microservices sont déployés sur un cluster Kubernetes avec des répliques et sont exposés via un Ingress Controller et un Load Balancer, offrant ainsi une architecture fiable, performante et hautement disponible.
 
-Architecture
+
 Terraform est utilisé pour provisionner un cluster Kubernetes avec 3 nœuds.
 8 microservices sont déployés avec 2 répliques par microservice pour assurer une haute disponibilité.
 Google Filestore est utilisé pour stocker les variables de session des utilisateurs et est monté comme un partage NFS (Network File System) dans le cluster.
@@ -14,3 +14,5 @@ Fonctionnalités
 Provisionnement d'infrastructure avec Terraform : Création et gestion de ressources sur GCP.
 Déploiement de microservices avec Kubernetes : Utilisation de Kubernetes pour gérer le cycle de vie des microservices.
 Stockage partagé avec Google Filestore et Google Compute Disk : Assurer la persistance des données et des variables de session.
+
+Architecture![Untitled diagram-2025-01-25-185811](https://github.com/user-attachments/assets/24093adc-4d07-4e51-b467-75e9392cd95d)
