@@ -1,0 +1,115 @@
+version: "3"
+
+services:
+  db:
+    image: mysql:latest
+    container_name: db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: smartspenddb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: root
+    volumes:
+      - db_data:/var/lib/mysql
+
+  front-service:
+    build:
+      context: ./PFS/front-service
+      dockerfile: Dockerfile
+    container_name: front-service
+    ports:
+      - "9080:80"
+    depends_on:
+      - db
+    volumes:
+      - session-data:/tmp
+
+  login-service:
+    build:
+      context: ./PFS/login-service
+      dockerfile: Dockerfile
+    container_name: login-service
+    ports:
+      - "9081:80"
+    depends_on:
+      - db
+    volumes:
+      - session-data:/tmp
+
+  inscription-service:
+    build:
+      context: ./PFS/inscription-service
+      dockerfile: Dockerfile
+    container_name: inscription-service
+    ports:
+      - "9082:80"
+    depends_on:
+      - db
+    volumes:
+      - session-data:/tmp
+
+  logout-service:
+    build:
+      context: ./PFS/logout-service
+      dockerfile: Dockerfile
+    container_name: logout-service
+    ports:
+      - "9083:80"
+    depends_on:
+      - db
+    volumes:
+      - session-data:/tmp
+
+  objectif-financier-service:
+    build:
+      context: ./PFS/objectif-financier-service
+      dockerfile: Dockerfile
+    container_name: objectif-financier-service
+    ports:
+      - "9084:80"
+    depends_on:
+      - db
+    volumes:
+      - session-data:/tmp
+
+  alertes-service:
+    build:
+      context: ./PFS/alertes-service
+      dockerfile: Dockerfile
+    container_name: alertes-service
+    ports:
+      - "9085:80"
+    depends_on:
+      - db
+    volumes:
+      - session-data:/tmp
+
+  espace-perso-service:
+    build:
+      context: ./PFS/espace-perso-service
+      dockerfile: Dockerfile
+    container_name: espace-perso-service
+    ports:
+      - "9086:80"
+    depends_on:
+      - db
+    volumes:
+      - session-data:/tmp  
+
+  transaction-service:
+    build:
+      context: ./PFS/transaction-service
+      dockerfile: Dockerfile
+    container_name: transaction-service
+    ports:
+      - "9087:80"
+    depends_on:
+      - db
+    volumes:
+      - session-data:/tmp
+
+volumes:
+  db_data:
+  session-data:  
+
