@@ -27,4 +27,8 @@ Déploiement de microservices avec Kubernetes : Utilisation de Kubernetes pour g
 
 Stockage partagé avec Google Filestore et Google Compute Disk : Assurer la persistance des données et des variables de session.
 
-Architecture![Untitled diagram-2025-01-25-185811](https://github.com/user-attachments/assets/24093adc-4d07-4e51-b467-75e9392cd95d)
+Architecture:
+
+![Untitled diagram-2025-01-26-220957](https://github.com/user-attachments/assets/d5f18a65-e73c-43ca-afdb-28aa98674812)
+
+
