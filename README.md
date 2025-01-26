@@ -1,5 +1,7 @@
 Projet Kubernetes sur Google Cloud Platform (GCP)
+
 Description
+
 Ce projet vise à provisionner et déployer une architecture Kubernetes scalable sur Google Cloud Platform (GCP) en utilisant des pratiques d'Infrastructure as Code (IaC). Il utilise Terraform pour le provisionnement des ressources, Google Kubernetes Engine (GKE) pour gérer les clusters Kubernetes, et Google Filestore et Google Compute Disk pour le stockage des données et des variables de session des utilisateurs.
 
 Les microservices sont déployés sur un cluster Kubernetes avec des répliques et sont exposés via un Ingress Controller et un Load Balancer, offrant ainsi une architecture fiable, performante et hautement disponible.
