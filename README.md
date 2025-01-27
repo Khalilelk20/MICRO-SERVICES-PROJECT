@@ -1,33 +1,50 @@
-Projet Kubernetes sur Google Cloud Platform (GCP)
+# 🌟 Projet Kubernetes sur Google Cloud Platform (GCP) 🌟
 
-Description
+## 📝 Description
 
-Ce projet vise à provisionner et déployer une architecture Kubernetes scalable sur Google Cloud Platform (GCP) en utilisant des pratiques d'Infrastructure as Code (IaC). Il utilise Terraform pour le provisionnement des ressources, Google Kubernetes Engine (GKE) pour gérer les clusters Kubernetes, et Google Filestore et Google Compute Disk pour le stockage des données et des variables de session des utilisateurs.Les microservices sont déployés sur un cluster Kubernetes avec des répliques et sont exposés via un Ingress Controller et un Load Balancer, offrant ainsi une architecture fiable, performante et hautement disponible.
+Ce projet vise à **provisionner et déployer une architecture Kubernetes scalable** sur Google Cloud Platform (GCP), en mettant en œuvre des pratiques avancées d'Infrastructure as Code (IaC).  
 
+🔹 **Technologies utilisées :**
+- **Terraform** pour le provisionnement des ressources cloud.
+- **Google Kubernetes Engine (GKE)** pour gérer les clusters Kubernetes.
+- **Google Filestore** et **Google Compute Disk** pour un stockage fiable et persistant.
+- **Ingress Controller** et **Load Balancer** pour une architecture performante et hautement disponible.
 
-🔧 Détails techniques :
+L'architecture déployée est **fiable**, **performante** et **hautement disponible**, répondant aux exigences modernes de scalabilité et de résilience.
 
-🔧 Terraform pour provisionner un cluster Kubernetes avec 3 nœuds.
+---
 
-📦 8 microservices, chacun avec 2 répliques, pour assurer la haute disponibilité.
+## 🔧 Détails techniques
 
-🌐 Ingress Controller pour centraliser le routage du trafic entre les microservices.
+| Composant                       | Description                                                                                            |
+|---------------------------------|--------------------------------------------------------------------------------------------------------|
+| **🌍 Cluster Kubernetes**        | Provisionné avec Terraform, composé de 3 nœuds sur GKE.                                                |
+| **📦 Microservices**             | 8 microservices, chacun avec **2 répliques**, pour assurer la haute disponibilité.                     |
+| **🌐 Ingress Controller**        | Permet de centraliser le routage du trafic entre les microservices via une seule IP publique.          |
+| **⚙️ Load Balancer**             | Expose l'architecture et équilibre le trafic pour garantir les performances.                          |
+| **📂 Google Filestore**          | Utilisé pour stocker les **variables de session** des utilisateurs, accessibles par plusieurs pods.   |
+| **🗃️ Google Compute Disk**       | Persistance des données pour le service MySQL.                                                         |
 
-⚙️ Load Balancer pour exposer l'architecture sur une seule IP publique.
+---
 
-📂 Google Filestore utilisé pour stocker les variables de session des utilisateurs.
+## 🚀 Fonctionnalités
 
-🗃️ Google Compute Disk pour persister les données du service MySQL.
+- **Provisionnement d'infrastructure avec Terraform :**  
+  Création et gestion automatisées des ressources sur GCP.
 
-Fonctionnalités
+- **Déploiement de microservices avec Kubernetes :**  
+  Gestion du cycle de vie des services, avec scalabilité et haute disponibilité.
 
-Provisionnement d'infrastructure avec Terraform : Création et gestion de ressources sur GCP.
+- **Stockage partagé :**  
+  - **Google Filestore** pour partager les variables de session entre plusieurs pods.
+  - **Google Compute Disk** pour persister les données critiques de MySQL.
 
-Déploiement de microservices avec Kubernetes : Utilisation de Kubernetes pour gérer le cycle de vie des microservices.
+- **Architecture performante et sécurisée :**  
+  Trafic HTTP centralisé via **Ingress Controller** et **Load Balancer**.
 
-Stockage partagé avec Google Filestore et Google Compute Disk : Assurer la persistance des données et des variables de session.
+---
 
-Architecture:
+## 🏗️ Architecture
 
 ![Untitled diagram-2025-01-26-220957](https://github.com/user-attachments/assets/d5f18a65-e73c-43ca-afdb-28aa98674812)
 
