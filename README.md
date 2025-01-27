@@ -1,4 +1,4 @@
-# 🌟 Projet Kubernetes sur Google Cloud Platform (GCP) 🌟
+# 🌟 Projet Kubernetes sur Google Cloud Platform (GCP) 
 
 ## 📝 Description
 
