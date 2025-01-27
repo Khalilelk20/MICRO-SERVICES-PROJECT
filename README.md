@@ -44,6 +44,24 @@ L'architecture déployée est **fiable**, **performante** et **hautement disponi
 
 ---
 
+## 🚀 Fonctionnalités du site SmartSpend
+
+Le site web **SmartSpend**, déployé dans cette architecture, est une application de gestion financière. Ses principales fonctionnalités sont :  
+- **Inscription et connexion des utilisateurs** : Authentification sécurisée pour accéder à l'application.  
+- **Gestion des transactions** :  
+  - **Insertion**, **modification**, et **suppression** des transactions financières.  
+- **Définition d'un objectif financier** : Les utilisateurs peuvent définir un montant limite à ne pas dépasser.  
+- **Alertes et visualisation des dépenses** :  
+  - Affichage de graphiques interactifs (courbes et graphiques) pour analyser les dépenses.  
+  - Notifications en cas de dépassement de l'objectif financier défini.  
+
+### Langages utilisés pour SmartSpend :  
+- **Frontend** : HTML, CSS, JavaScript  
+- **Backend** : PHP  
+- **Base de données** : SQL  
+
+---
+
 ## 🏗️ Architecture
 
 ![Untitled diagram-2025-01-26-220957](https://github.com/user-attachments/assets/d5f18a65-e73c-43ca-afdb-28aa98674812)
