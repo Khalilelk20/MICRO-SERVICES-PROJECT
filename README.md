@@ -7,7 +7,8 @@ Ce projet vise à **provisionner et déployer une architecture Kubernetes scalab
 🔹 **Technologies utilisées :**
 - **Terraform** pour le provisionnement des ressources cloud.
 - **Google Kubernetes Engine (GKE)** pour gérer les clusters Kubernetes.
-- **Google Filestore** et **Google Compute Disk** pour un stockage fiable et persistant.
+- **Redis** pour un stockage rapide et performant des variables de session.
+- **Google Compute Disk** pour un stockage persistant des données.
 - **Ingress Controller** et **Load Balancer** pour une architecture performante et hautement disponible.
 
 L'architecture déployée est **fiable**, **performante** et **hautement disponible**, répondant aux exigences modernes de scalabilité et de résilience.
@@ -22,7 +23,7 @@ L'architecture déployée est **fiable**, **performante** et **hautement disponi
 | **📦 Microservices**             | 8 microservices, chacun avec **2 répliques**, pour assurer la haute disponibilité.                     |
 | **🌐 Ingress Controller**        | Permet de centraliser le routage du trafic entre les microservices via une seule IP publique.          |
 | **⚙️ Load Balancer**             | Expose l'architecture et équilibre le trafic pour garantir les performances.                          |
-| **📂 Google Filestore**          | Utilisé pour stocker les **variables de session** des utilisateurs, accessibles par plusieurs pods.   |
+| **🔄 Redis**                     | Utilisé pour stocker les **variables de session** des utilisateurs, accessible par plusieurs pods.    |
 | **🗃️ Google Compute Disk**       | Persistance des données pour le service MySQL.                                                         |
 
 ---
@@ -35,9 +36,11 @@ L'architecture déployée est **fiable**, **performante** et **hautement disponi
 - **Déploiement de microservices avec Kubernetes :**  
   Gestion du cycle de vie des services, avec scalabilité et haute disponibilité.
 
-- **Stockage partagé :**  
-  - **Google Filestore** pour partager les variables de session entre plusieurs pods.
-  - **Google Compute Disk** pour persister les données critiques de MySQL.
+- **Stockage rapide avec Redis :**  
+  Utilisation de Redis pour partager les variables de session entre plusieurs pods, avec une haute performance.
+
+- **Persistance des données :**  
+  Utilisation de **Google Compute Disk** pour persister les données critiques de MySQL.
 
 - **Architecture performante et sécurisée :**  
   Trafic HTTP centralisé via **Ingress Controller** et **Load Balancer**.
@@ -64,6 +67,6 @@ Le site web **SmartSpend**, déployé dans cette architecture, est une applicati
 
 ## 🏗️ Architecture
 
-![Untitled diagram-2025-01-26-220957](https://github.com/user-attachments/assets/d5f18a65-e73c-43ca-afdb-28aa98674812)
+![Untitled diagram-2025-02-21-141345](https://github.com/user-attachments/assets/e424f105-f346-4409-a65f-68aecdcfed2e)
 
-
+--- 
