@@ -67,6 +67,6 @@ Le site web **SmartSpend**, déployé dans cette architecture, est une applicati
 
 ## 🏗️ Architecture
 
-![Untitled diagram-2025-02-21-141345](https://github.com/user-attachments/assets/e424f105-f346-4409-a65f-68aecdcfed2e)
+![Untitled diagram-2025-02-22-152030](https://github.com/user-attachments/assets/77c9cbe9-1b07-46a7-81f1-6d44d26161af)
 
 --- 
