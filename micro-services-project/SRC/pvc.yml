@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce  # Accès en lecture-écriture pour un seul pod
+  resources:
+    requests:
+      storage: 1Gi  # Taille du PVC pour MySQL

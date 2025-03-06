@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alertes-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: alertes-service
+  template:
+    metadata:
+      labels:
+        app: alertes-service
+    spec:
+      containers:
+      - name: alertes-service
+        image: khalilelk/khalil_images:alertes-servicevf
+        imagePullPolicy: Always
+        env:
+          - name: PUBLIC_IP
+            value: ""
+
+        ports:
+        - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: alertes-service
+spec:
+  selector:
+    app: alertes-service
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 80
+  type: NodePort  

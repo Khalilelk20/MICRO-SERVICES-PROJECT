@@ -1,0 +1,106 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: micro-services-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /*
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: front-service
+            port:
+              number: 8082
+      - path: /espace.php
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: espace-perso-service
+            port:
+              number: 8081
+      - path: /espace_personnel.css
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: espace-perso-service
+            port:
+              number: 8081
+      - path: /inscription.php
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: inscription-service
+            port:
+              number: 8083
+      - path: /inscription.css
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: inscription-service
+            port:
+              number: 8083
+      - path: /login.php
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: login-service
+            port:
+              number: 8084
+      - path: /login.css
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: login-service
+            port:
+              number: 8084
+      - path: /logout.php
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: logout-service
+            port:
+              number: 8085
+      - path: /objectif.php
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: objectif-financier-service
+            port:
+              number: 8086
+      - path: /objectifs_financiers.css
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: objectif-financier-service
+            port:
+              number: 8086
+      - path: /transaction.php
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: transaction-service
+            port:
+              number: 8087
+      - path: /transaction.css
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: transaction-service
+            port:
+              number: 8087
+      - path: /alertes.php
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: alertes-service
+            port:
+              number: 8080
+      - path: /alertes.css
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: alertes-service
+            port:
+              number: 8080

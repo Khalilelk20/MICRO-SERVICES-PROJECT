@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: objectif-financier-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: objectif-financier-service
+  template:
+    metadata:
+      labels:
+        app: objectif-financier-service
+    spec:
+      containers:
+      - name: objectif-financier-service
+        image: khalilelk/khalil_images:objectif-financier-servicevf
+        imagePullPolicy: Always
+        env:
+          - name: PUBLIC_IP
+            value: ""
+        ports:
+        - containerPort: 80
+        
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: objectif-financier-service
+spec:
+  selector:
+    app: objectif-financier-service
+  ports:
+    - protocol: TCP
+      port: 8086
+      targetPort: 80
+  type: NodePort

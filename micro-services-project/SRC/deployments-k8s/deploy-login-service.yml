@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: login-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: login-service
+  template:
+    metadata:
+      labels:
+        app: login-service
+    spec:
+      containers:
+      - name: login-service
+        image: khalilelk/khalil_images:login-servicevf
+        imagePullPolicy: Always
+        env:
+          - name: PUBLIC_IP
+            value: ""
+        ports:
+        - containerPort: 80
+       
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: login-service
+spec:
+  selector:
+    app: login-service
+  ports:
+    - protocol: TCP
+      port: 8084
+      targetPort: 80
+  type: NodePort
